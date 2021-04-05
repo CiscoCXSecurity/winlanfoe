@@ -1,0 +1,113 @@
+Starting enum4linux v0.8.9 ( http://labs.portcullis.co.uk/application/enum4linux/ ) on Wed Aug 21 15:13:03 2013
+
+ ========================== 
+|    Target Information    |
+ ========================== 
+Target ........... 172.16.1.101
+RID Range ........ 500-550,1000-1050
+Username ......... ''
+Password ......... ''
+Known Usernames .. administrator, guest, krbtgt, domain admins, root, bin, none
+
+
+ ==================================================== 
+|    Enumerating Workgroup/Domain on 172.16.1.101    |
+ ==================================================== 
+[+] Got domain/workgroup name: WORKGROUP
+
+ ============================================ 
+|    Nbtstat Information for 172.16.1.101    |
+ ============================================ 
+Looking up status of 172.16.1.101
+	WIN2K3SP1       <00> -         B <ACTIVE>  Workstation Service
+	WIN2K3SP1       <20> -         B <ACTIVE>  File Server Service
+	WORKGROUP       <00> - <GROUP> B <ACTIVE>  Domain/Workgroup Name
+	WORKGROUP       <1e> - <GROUP> B <ACTIVE>  Browser Service Elections
+
+	MAC Address = 08-00-27-2F-CB-0A
+
+ ===================================== 
+|    Session Check on 172.16.1.101    |
+ ===================================== 
+[+] Server 172.16.1.101 allows sessions using username '', password ''
+
+ =========================================== 
+|    Getting domain SID for 172.16.1.101    |
+ =========================================== 
+could not obtain sid for domain WORKGROUP
+error: NT_STATUS_ACCESS_DENIED
+[+] Can't determine if host is part of domain or part of a workgroup
+
+ ====================================== 
+|    OS information on 172.16.1.101    |
+ ====================================== 
+[+] Got OS info for 172.16.1.101 from smbclient: Domain=[WORKGROUP] OS=[Windows Server 2003 3790 Service Pack 1] Server=[Windows Server 2003 5.2]
+[E] Can't get OS info with srvinfo: NT_STATUS_ACCESS_DENIED
+
+ ============================= 
+|    Users on 172.16.1.101    |
+ ============================= 
+[E] Couldn't find users using querydispinfo: NT_STATUS_ACCESS_DENIED
+
+[E] Couldn't find users using enumdomusers: NT_STATUS_ACCESS_DENIED
+
+ ========================================= 
+|    Share Enumeration on 172.16.1.101    |
+ ========================================= 
+[E] Can't list shares: NT_STATUS_ACCESS_DENIED
+
+[+] Attempting to map shares on 172.16.1.101
+
+ ==================================================== 
+|    Password Policy Information for 172.16.1.101    |
+ ==================================================== 
+[E] Unexpected error from polenum.py:
+
+[+] Attaching to 172.16.1.101 using a NULL share
+
+	[+] Trying protocol 445/SMB...
+
+[+] Found domain(s):
+
+	[+] WIN2K3SP1
+	[+] Builtin
+
+[+] Password Info for Domain: WIN2K3SP1
+Error Getting Password Policy: OpenDomain error
+
+[E] Failed to get password policy with rpcclient
+
+
+ ============================== 
+|    Groups on 172.16.1.101    |
+ ============================== 
+
+[+] Getting builtin groups:
+[E] Can't get builtin groups: NT_STATUS_ACCESS_DENIED
+
+[+] Getting builtin group memberships:
+
+[+] Getting local groups:
+[E] Can't get local groups: NT_STATUS_ACCESS_DENIED
+
+[+] Getting local group memberships:
+
+[+] Getting domain groups:
+[E] Can't get domain groups: NT_STATUS_ACCESS_DENIED
+
+[+] Getting domain group memberships:
+
+ ======================================================================= 
+|    Users on 172.16.1.101 via RID cycling (RIDS: 500-550,1000-1050)    |
+ ======================================================================= 
+[E] Couldn't get SID: NT_STATUS_ACCESS_DENIED.  RID cycling not possible.
+
+ ============================================= 
+|    Getting printer info for 172.16.1.101    |
+ ============================================= 
+could not obtain sid for domain WORKGROUP
+error: NT_STATUS_ACCESS_DENIED
+
+
+enum4linux complete on Wed Aug 21 15:13:04 2013
+
